@@ -1,7 +1,7 @@
 #pragma once
 
-#include <windows.h>
 #include <cstdio>
+#include <unistd.h>
 #include <libpyatnashki/Field.h>
 
 void Game();

@@ -3,11 +3,11 @@
 void Game(){
     
     std::string startMessage = "Hello, and Welcome to the Game!\nLet the game Start!\n";
-    for(int i = 0; i < startMessage.size(); i++){
+    for(int i = 0; i < int(startMessage.size()); i++){
         std::cout << startMessage[i];
-        Sleep(33);
+        usleep(33);
     }
-    system("CLS");
+    system("clear");
 
     int size;
     
@@ -40,13 +40,13 @@ void Game(){
         default:
             break;
         }
-        system("CLS");
+        system("clear");
         field.ShowField();
         if(field.CheckWin()){
             break;
         }
     }
+    system("clear");
 
     std::cout << "Congratulations! You win!\n";
-    system("pause");
 }
