@@ -11,8 +11,11 @@ void Game(){
 
     int size;
     
-    std::cout << "Write number from 3 to 6: ";
-    std::cin >> size;
+    do{
+        system("clear");
+        std::cout << "Write number from 3 to 6: ";
+        std::cin >> size;
+    }while(size < 3 || size > 6);
 
     Field field(size);
     field.GenerateField();
@@ -21,7 +24,6 @@ void Game(){
     while(true){
         char input;
         input = std::getchar();
-        std::cout << "char " + input;
         switch (input)
         {
         case 'w':

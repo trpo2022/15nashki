@@ -1,6 +1,9 @@
 #include <libpyatnashki/Field.h>
 
 Field::Field(int size){
+    if(size < 0){
+        throw "Size couldnt be negative";
+    }
     this->size = size;
     field = new int*[size];
     for(int i = 0; i < size; i++){
@@ -35,6 +38,9 @@ bool Field::CheckWin(){
 }
 
 void Field::TryMove(DIRECTION dir){
+    if(int(dir) < 0 || int(dir) > 3){
+        throw "Not valid direction";
+    }
     switch (dir)
     {
     case UP:
@@ -109,7 +115,7 @@ void Field::GenerateField(){
         }
     }
 
-    for(int i = 0; i < 150; i++){
+    for(int i = 0; i < 1500; i++){
         TryMove(DIRECTION(std::rand() % 4));
     }
 
